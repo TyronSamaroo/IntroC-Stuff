@@ -27,9 +27,9 @@ int main()
 	// TODO: try the above version.  Observe the horrible error
 	// message...  O_O
 	if (answer == "no" || answer == "NO") {
-		cout << "T_T\n";
+		cout << "You're Cool\n";
 	} else {
-		cout << "I envy you.\n";
+		cout << "Well aren't you smart.\n";
 	}
 	#endif
 

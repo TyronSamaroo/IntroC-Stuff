@@ -31,7 +31,7 @@ int main()
 	a = 100000000000000000000000000000.0;
 	y = 0.0;
 	z = 0.0000000001;
-	cout << a+y << " IS ED LOL " << a+z << "\n";
+	cout << a+y << " LOL " << a+z << "\n";
 	if (a+y == a+z) {
 		cout << "y == z: " << (y == z) << "\n";
 		/* NOTE: I used multiplication during lecture, but realized it
