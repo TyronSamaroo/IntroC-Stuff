@@ -16,7 +16,7 @@ int main()
 	/* IDEA: execute a piece of code 0 or 1 times, conditioned upon a
 	 * boolean expression.
 	 * */
-	#if 1 /* NOTE: replace 1 with 0 to comment everything until
+	#if 0 /* NOTE: replace 1 with 0 to comment everything until
 			 the endif below */
 	cout << "Did you remember your umbrella? ";
 	string answer; /* NOTE: string is for sequences of characters.
@@ -27,9 +27,9 @@ int main()
 	// TODO: try the above version.  Observe the horrible error
 	// message...  O_O
 	if (answer == "no" || answer == "NO") {
-		cout << "You're Cool\n";
-	} else {
 		cout << "Well aren't you smart.\n";
+	} else {
+		cout << "You're Cool.\n";
 	}
 	#endif
 
@@ -81,9 +81,10 @@ int main()
 	/* now something actually useful. */
 	/* quick warm up: print all integers squares less than 100.
 	 * e.g., 0,1,4,9,16,25... */
+	 #if 0
 	int i = 0; /* Remember: 1 equals sign means "assignment".
 	                        2 equals signs is the boolean comparison */
-	while (i < 10) {
+	while (i < 100) {
 		cout << i*i << "\n";
 		i = i+1; /* shorthand: i++ */
 	}
@@ -94,6 +95,9 @@ int main()
 	 *    statements to do while expression is true...
 	 * }
 	 * */
+	#endif
+
+
 
 	/* TODO: read integers from stdin, and print out the smallest one.
 	 * (hint: use a loop like this: "while(cin >> n) {...}" where n is
@@ -105,9 +109,27 @@ int main()
 	 * <hit ctrl-d>
 	 * min == 1
 	 * */
-
-	/* TODO: read integers from stdin, and print their sum.  See above
+	 	/* TODO: read integers from stdin, and print their sum.  See above
 	 * for how to read ints from stdin (use a while(cin >> n) thing). */
+
+
+
+
+
+
+
+#if 0
+int n, answer;
+
+cout << "Input an interger.\n";
+while(cin >> n){
+answer+=n;
+cout << "The answer is:" << answer<< "\n";
+
+}
+#endif
+
+#if 1
 
 	/* TODO: given an integer n, find exponent of the largest power of two that
 	 * divides n.  Example: if n = r*8 with r odd, then you should output 3
@@ -115,7 +137,26 @@ int main()
 	 * number's factorization into primes.) */
 	/* IDEA: keep on dividing n by two until we can't,
 	 * and keep track of how many times it worked. */
+	 int a,b; /* store the input */
+	cin >> a;
+	cin >> b;
 
+
+
+	for (int i = a; i >= 1; i--) {
+
+		if (b % i == 0 && a % i == 0) {
+			break;
+		}
+	}
+int n, answer;
+
+cout << "Input an interger\n";
+while(cin >> n){
+answer++;
+cout << "The Exponent of the largest power is:" << answer<<"\n";}
+
+#endif
 	return 0;
 }
 

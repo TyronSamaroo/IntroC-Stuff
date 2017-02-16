@@ -25,7 +25,7 @@ int main()
 	 * Let's see some examples: */
 
 	/* exercise: compute the min of integers supplied via stdin. */
-	#if 0
+	#if 1
 	int n; /* store input */
 	int min; /* minimum of what we've seen *so far*. */
 	cin >> n;
@@ -62,6 +62,7 @@ int main()
 	 * could have, then walk *backwards* until you find the first
 	 * value that divides both inputs. */
 	/* Range of possibilities for a valid answer: {min{a,b}...1} */
+	#if 0
 	int a,b; /* store the input */
 	cin >> a;
 	cin >> b;
@@ -83,6 +84,7 @@ int main()
 		}
 	}
 	return 0;
+	#endif
 
 	/* TODO: brute force test for perfect cubes.  Check if
 	 * n = k^3 for some integer k.  */
