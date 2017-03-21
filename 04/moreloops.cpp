@@ -25,7 +25,7 @@ int main()
 	 * Let's see some examples: */
 
 	/* exercise: compute the min of integers supplied via stdin. */
-	#if 1
+#if 1
 	int n; /* store input */
 	int min; /* minimum of what we've seen *so far*. */
 	cin >> n;
@@ -42,7 +42,7 @@ int main()
 	}
 	cout << min << "\n";
 	return 0;
-	#endif
+#endif
 
 	/* TODO: if you haven't already, be sure you can do this on your own,
 	 * as well as similar things like the min, the sum, the product, the
@@ -86,21 +86,111 @@ int main()
 	return 0;
 	#endif
 
+#if 0
 	/* TODO: brute force test for perfect cubes.  Check if
 	 * n = k^3 for some integer k.  */
 
+int n,k;
+cin>> n;
+for(k=0; k<=n; k++)
+	 {
+if(k*k*k==n)
+
+cout<< "Your hairline is a perfect cube of "<<k  <<"\n";}
+#endif
+#if 0
+int n,k;
+cin>> n;
+cin>> k;
+if(k*k*k==n)
+cout<<"Perfect Cube \n";
+else
+cout<<"Not Perfect Cube \n";
+#endif
+# if 0
 	/* TODO: write a loop that prints the sum of the first n odd cubes. */
+int n,k,i=1;
+int sum= 0;
+cin>> n;
+while(i<=n)
+	{
+if(i%2!=0){
+	i--;
+	k=i;
+	sum += k*k*k;
+
+cout<<sum<<"\n";}
+}
+#endif
+
+#if 0
+int n,i;
+int sum;
+cin>> n;
+for(i=1;i<=n;i++)
+	{
+	sum += i*i*i;
+	}
+cout<<sum<<"\n";
+
+
+#endif
+#if 1
 
 	/* TODO: write code that gets an integer n from the user and prints out
 	 * the n-th term of the fibonacci sequence. */
+int a=1,b=0,c=1,n;
+	cin>>n;
+	for(int i=2;i<n;i++)
+		{
+		a=b;
+		b=c;
+		c=a+b;
+		}
+		cout<< "The "<< n << "th term of the fibonacci sequence is "<< c <<endl;
+#endif
 
+#if 0
 	/* TODO: a slight generalization of an earlier exercise: for integers
 	 * n and k, determine the largest power of k that divides n. */
+	 int n,k;
+	 int count=0;
+	 cout<< "Input n: \n";
+	 cin>> n;
+	 cout << "Input k: \n";
+	 cin>>k;
 
+	 while(n%k==0) {
+		 count++;
+		 n /= k;
+	 }
+cout<<count<<"\n";
+return 0;
+#endif
+
+#if 0
 	/* TODO: write a program that reads (arbitrarily many) integers from
 	 * stdin and outputs the *second* smallest one.  NOTE: you don't need
 	 * to store many numbers (all at once, that is) to do this!  You'll
 	 * only need a few integer variables.  Think about invariants! */
+int min;
+int secmin;
+int n;
+
+cin>>n;
+min=n;
+cin>> secmin;
+while(cin>>n){
+if(n<min)
+n=min;
+else if(n<secmin && secmin> min)
+secmin=n;
+}
+
+cout<<"The second smallest number is: "<<secmin<<"\n";
+
+	return 0;
+#endif
 
 	return 0;
 }

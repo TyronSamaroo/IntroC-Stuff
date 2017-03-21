@@ -41,8 +41,20 @@ int hornerEval(int a[], size_t degree, int x)
  * */
 
 void randPerm(int* A, size_t n)
-{
+{srand(time(0));
+for (int i = n-1; i > 0; i--)
+{int j = rand() % (i+1);
+int temp = A[i];
+A[i] = A[j];
+A[j] = temp;   }
 }
+
+void printArray (int arr[], int n)
+{for (int i = 0; i < n; i++)
+cout<< arr[i];
+    cout<<endl;}
+
+
 
 int main() {
 	int C[] = {3,2,1}; // x^2 + 2x + 3
@@ -51,7 +63,9 @@ int main() {
 	cin >> x;
 	cout << "f(" << x << ") = " << polyEval(C,2,x) << endl;
 	cout << "f(" << x << ") = " << hornerEval(C,2,x) << endl;
-
+int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+randPerm(arr,8);
+printArray(arr,8);
 
 	/* NOTE: you will need random numbers of course for the above exercise.
 	 * Here is how you can get them: */

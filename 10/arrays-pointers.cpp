@@ -3,7 +3,7 @@
 using std::cin;
 using std::cout;
 using std::endl;
-
+#if 0
 int main() {
 	/* ARRAYS: OVERVIEW
 	 * Arrays in C/C++: kind of like a "dumb" version of std::vector.
@@ -121,3 +121,63 @@ int main() {
  * allocate the same, fixed amount of storage.  No vectors.  No additional
  * arrays.  Just a few integers.  Try it!  (Kind of hard though.)
  * */
+ #endif
+#if 0
+void shiftarray(int array[],int size)
+{int temp=array[0],i;
+for (i=0;i<size-1;i++)
+	{
+	array[i]=array[i+1];}
+
+		array[i]=temp;
+}
+void print(int array[])
+{	for (int i=0; i<5; i++)
+	{cout<< array[i]<<endl;
+	}
+}
+void move(int array[],int b){
+for(int a=0; a<b; a++){
+shiftarray(array,5);
+}
+}
+int main(){
+	int b;
+	int array[]={0,1,2,3,4};
+	cout<< "Shift By: \n";
+	cin>> b;
+	cout<< "Shifted Array: \n";
+	move(array,b);
+	shiftarray(array,5);
+	print(array);
+
+return 0;}
+
+#endif
+#if 1
+void shiftarray(int array[],int n)
+{int temp;
+for (int i=0;i<n;i++)
+	{ temp=array[n-1];
+		array[n-1]=array[i];
+		array[i]=temp;
+		}
+	}
+void printarray(int array[])
+	{for(int i=0; i<5; i++){
+		cout<< array[i];
+		cout<<endl;}
+	}
+int main(){
+int b;
+	int array[]={0,1,2,3,4};
+cout<< "Shift By: \n";
+	cin>> b;
+	cout<< "Shifted Array: \n";
+for(int a=0; a<b; a++){
+	shiftarray(array,5);}
+	printarray(array);
+
+return 0;}
+#endif
+

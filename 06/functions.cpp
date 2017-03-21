@@ -2,10 +2,11 @@
  * reading: Prof. Li's notes, lectures 7 -- 10 */
 #include <iostream>
 #include <cstdio>
+#include <cmath>
 using std::cin;
 using std::cout;
 using std::endl;
-
+#if 0
 /* syntax:
  * datatype functionname(parameterlist) { c++ statements...}
  * think of f(x) from your calculus days... remember this notation?
@@ -18,6 +19,7 @@ using std::endl;
 
 /* example: x --> 2x + 1, for integers x.
  * */
+
 int f(int x) {
 	/* rules go here: */
 	return 2*x + 1;
@@ -63,20 +65,115 @@ int main()
 	cout << "y == " << y << "\n";
 	test2(y);
 	cout << "y == " << y << "\n";
+
 	return 0;
 }
+#endif
 
+#if 0
 /* TODO: write a function that takes 3 integers and returns
  * the maximal value */
+int max(int x,int y,int z)
+{int max=x;
+ if(x>y && x>z )
+ if(y>x && y>z )
+ {max=y;}
+ if(z>y && z>x )
+ {max=z;}
+ return max;}
+ int main(){
+  int x,y,z;
+  cin>>x>>y>>z;
+ cout<< max(x,y,z)<< endl;
+ }
+#endif
+#if 0
 /* TODO: write a function that takes 3 doubles and returns the average value.
  * also write code in main to test it.  */
+int average(int& x, int& y, int& z){
+ return (x+y+z)/3;}
+ int main(){
+  int x,y,z;
+  cin>>x>>y>>z;
+  cout << average(x,y,z) << endl;}
+
+#endif
+#if 0
+/* TODO: write a function that takes 3 doubles and returns the average value.
+ * also write code in main to test it.  */
+int average(int& x, int& y, int& z){
+int sum,average;
+ sum=x+y+z;
+ average=sum/3;
+ return average;}
+ int main(){
+  int x,y,z;
+  cin>>x>>y>>z;
+  cout << average(x,y,z) << endl;}
+
+#endif
+#if 0
 /* TODO: write a function that takes two integer parameters and swaps the
  * contents, i.e., if x=2 and y=5, then after calling swap(x,y), y=2 and x=5
  * Also write test code in main! */
+
+int swapthis(int& x, int& y)
+
+{int z;
+z=x;
+x=y;
+y=z;
+return 0;}
+int main(){
+int x,y;
+cin>> x >> y;
+swapthis(x,y);
+ cout << x<<endl<<y<<endl;}
+#endif
+#if 0
 /* TODO: write an isPrime function that takes an integer and returns a boolean
  * value indicating whether or not it is prime.  */
+bool isPrime(int n){
+
+for(int i=2;i<n;i++)
+{
+if (n%i==0)
+{return false;}
+}
+return true;}
+
+int main(){
+int n;
+while(cin >> n){
+cout << isPrime(n)<<endl;
+ }
+return 0;}
+#endif
+#if 1
 /* TODO: write a function that takes an integer n and returns the
  * nth term in the Fibonacci sequence. */
+
+int Fib(int& n){
+int a,b,c;
+ a=1;
+ b=0;
+ c=1;
+if(n==0)
+		c=0;
+	for(int i=1;i<n;i++)
+  {
+   a=b;
+   b=c;
+   c=a+b;}
+return c;}
+int main(){
+int n;
+while(cin>>n){
+cout<< Fib(n)<<endl;}
+}
+#endif
+
+
 /* TODO: (WARNING: THIS IS NOT EASY. Only attempt this if you are bored.)
  * The previous exercise asked for you to compute the nth term of the
  * Fibonacci sequence.  Try to estimate approximately how many steps (number

@@ -19,17 +19,39 @@ int main()
 	 * */
 	/* let's test the conjecture for many integers, provided on
 	 * standard input. */
+	#if 0
 	int n;
+
 	while (cin >> n) {
 		int oldn = n;
 		int count = 0;
 		while (n > 1) {
 			count++;
-			if (n % 2 == 0) n /= 2; /* NOTE: n/=2 is shorthand for n = n/2 */
-			else n = n*3 + 1;
+			if (n % 2 == 0)
+			n /= 2; /* NOTE: n/=2 is shorthand for n = n/2 */
+			else n = n*3 ;
 		}
+
 		cout << oldn << " stopped after " << count << " steps.\n";
 	}
+#endif
+
+#if 1
+/*this is ed!!*/
+int n;
+	while (cin >> n) {
+		int oldn = n;
+		int i=0;
+		for (i=0;i==1;i++) {
+			if(i==1)
+			i=0;
+			if (i % 2 == 0)
+			i /= 2; /* NOTE: n/=2 is shorthand for n = n/2 */
+			else i = i*3 ;
+		}
+		cout << oldn << " stopped after " << i << " steps.\n";
+	}
+#endif
 
 	return 0;
 }

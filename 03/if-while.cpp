@@ -137,27 +137,20 @@ cout << "The answer is:" << answer<< "\n";
 	 * number's factorization into primes.) */
 	/* IDEA: keep on dividing n by two until we can't,
 	 * and keep track of how many times it worked. */
-	 int a,b; /* store the input */
-	cin >> a;
-	cin >> b;
 
 
-
-	for (int i = a; i >= 1; i--) {
-
-		if (b % i == 0 && a % i == 0) {
-			break;
-		}
-	}
-int n, answer;
-
-cout << "Input an interger\n";
-while(cin >> n){
+int n,answer;
+cout << "Input an integer ";
+cin >> n;
+while(n%2== 0){
 answer++;
-cout << "The Exponent of the largest power is:" << answer<<"\n";}
+n/=2;
+}
+cout<< answer << "\n";
 
 #endif
-	return 0;
+
+return 0;
 }
 
 /* TODO: compile this via the makefile instead of typing out the g++

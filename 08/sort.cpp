@@ -12,7 +12,7 @@ using std::vector;
 #include <cstdio>
 #include <algorithm>
 using std::swap;
-
+#if 1
 /* exercise: write a function that takes a vector and places the elements
  * in sorted order.  This is also kind of challenging. */
 
@@ -32,7 +32,7 @@ size_t indexOfSmallest(const vector<int>& V, size_t start) {
 }
 
 void sort(vector<int>& V) {
-	for (size_t i = 0; i < V.size()-1; i++) {
+	for (size_t i = 0; i < V.size()-1;i++) {
 		swap(V[i],V[indexOfSmallest(V,i)]);
 	}
 }
@@ -55,21 +55,22 @@ int main()
 	for (size_t i = 0; i < v.size(); i++) {
 		cout << v[i] << " ";
 	}
-	cout << "\n";
-
+	cout<< "\n";
+		return 0;
+}
+	#endif
+#if 0
 	/* TODO: size_t can be a little tricky when counting backwards.
 	 * See if you can debug this for loop: */
-	#if 0
+
 	for (size_t i = V.size()-1; i >=0; i--) {
 		cout << V[i] << " ";
 	}
 	/* Use gdb if nothing jumps out at you as the answer!  */
-	#endif
-
-	return 0;
-}
 
 
+#endif
+#if 0
 /* TODO: write a *binary search* on a sorted vector.  The idea is to
  * kind of emulate the process you use to find a particular page in a book:
  * 1. open the book to some page in the middle.
@@ -79,4 +80,39 @@ int main()
  *
  * This might be a little challenging.  Ask questions if you get stuck.
  * */
+size_t search(const vector<int>& V,size_t start,size_t middle)
+for(size_t i=start;i<V.size();i++)
+{ sort(
 
+
+
+
+size_t indexOfSmallest(const vector<int>& V, size_t start){
+size_t  smallindex= start;
+	for(size_t i=start+1; i<V.size();i++){
+		if (V[i]<V[smallindex])
+				smallindex=i;}
+				return smallindex;
+}
+void sort(vector<int>& V){
+for(size_t i=0; i<V.size()-1;i++){
+	swap(V[i],V[indexOfSmallest(V,i)]);
+
+}
+}
+
+int main(){
+int x;
+vector<int> v;
+
+	while(cin>>x){
+	v.push_back(x);
+}
+sort(v);
+for(size_t i=0; i<v.size();i++){
+	cout << v[i]<<"  ";
+}
+cout<< "\n";
+return 0;
+}
+#endif
