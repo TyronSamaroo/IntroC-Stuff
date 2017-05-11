@@ -3,7 +3,7 @@ OBJECTS := $(SOURCES:.c=.o)
 OBJECTS := $(OBJECTS:.cpp=.o)
 HEADERS := $(wildcard *.h include/*.h)
 
-COMMON   := -O0 -Wall -Wformat=2 -std=c++98 -pedantic-errors
+COMMON   := -O0 -Wall -Wformat=2 -std=c++98 -pedantic-errors # -fstack-protector
 CFLAGS   := $(CFLAGS) $(COMMON)
 CXXFLAGS := $(CXXFLAGS) $(COMMON)
 CC       := gcc
