@@ -29,10 +29,10 @@ cout << n << " "<<endl;
 void printVertically(unsigned long n)
 {
 	if(n<10){
-
-	return n;}
+	cout << n << " "<< endl;
+	return ;}
 		printVertically(n/10);
-		return n%10;
+		cout << n%10<<endl;
 }
 
 

@@ -20,14 +20,11 @@ set<set<int> > powerSet(set<int>& S)
 	}
 	int leftout = *S.begin();
 	S.erase(leftout);
-	/* Since S is now smaller, we can use recursive magic :D */
+
 	set<set<int> > T = powerSet(S);
-	/* store the "for real" powerset of S in P: */
+
 	set<set<int> > P(T); /* copy T into P */
-	/* At present, how is P deficient from the real powerset? */
-	/* Answer: missing all subsets containing 'leftout' */
-	/* Plan: for every set in T, add leftout, and then add
-	 * the resulting set to P. */
+
 	for (set<set<int> >::iterator i = T.begin(); i!=T.end(); i++) {
 		set<int> U = *i;
 		U.insert(leftout);
@@ -35,12 +32,6 @@ set<set<int> > powerSet(set<int>& S)
 	}
 	return P;
 }
-/* NOTE: in the hand written notes, the "U" was supposed to denote
- * the union of sets, not another set as it is used above.  Just
- * in case that was confusing : ) */
-
-/* TODO: try to write a powerset function for vectors, say using
- * the following prototype:  */
 
 typedef vector<int>::iterator vi;
 typedef vector<vector<int> >::iterator vvi;

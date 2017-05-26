@@ -11,7 +11,7 @@ using std::set;
  * for the intuition and an outline. */
 
 /* with sets: */
-set<set<int> > ksubsets(set<int>& S, size_t k);
+set<set<int> > ksubsets1(set<int>& S, size_t k);
 /* or with vectors: */
 vector<vector<int> > ksubsets(vector<int>& S, size_t k){
  if(k==0) return vector<vector<int> >(1,vector<int>());

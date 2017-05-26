@@ -93,6 +93,7 @@ for(set<int>::iterator j = S2.begin(); j != S2.end(); j++){
 if(S1==S2){I.insert(*i);}
 
 
+
 }
 
 }
