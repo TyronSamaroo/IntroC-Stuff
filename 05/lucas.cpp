@@ -5,7 +5,7 @@
 using std::cin;
 using std::cout;
 using std::endl;
-
+#if 1
 int main()
 {
 	/* Lucas sequences (of the first kind):
@@ -16,7 +16,7 @@ int main()
 	 * in the notes, but instead try it from scratch first! Also, make
 	 * sure your code works for small values of n (0 and 1 in particular).
 	* */
-	#if 1
+
 int a=1,b=0,c=1,n=0;
 	cin>>n;
 	if(n==0)
@@ -39,10 +39,9 @@ int a=1,b=0,c=1,n=0;
 		b=c;
 		c=a+b;
 		cout<< c <<endl;
-#endif
+
 	return 0;
 }
-
 
 
 // vim:foldlevel=1

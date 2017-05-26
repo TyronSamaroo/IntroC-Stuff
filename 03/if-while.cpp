@@ -143,8 +143,8 @@ int n,answer;
 cout << "Input an integer ";
 cin >> n;
 while(n%2== 0){
-answer++;
 n/=2;
+answer++;
 }
 cout<< answer << "\n";
 

@@ -25,7 +25,7 @@ int main()
 	 * Let's see some examples: */
 
 	/* exercise: compute the min of integers supplied via stdin. */
-#if 1
+#if 0
 	int n; /* store input */
 	int min; /* minimum of what we've seen *so far*. */
 	cin >> n;
@@ -92,11 +92,17 @@ int main()
 
 int n,k;
 cin>> n;
-for(k=0; k<=n; k++)
-	 {
-if(k*k*k==n)
-
-cout<< "Your hairline is a perfect cube of "<<k  <<"\n";}
+cin>> k;
+if(k>n){
+	int t=k;
+	k=n;
+	n=t;
+}
+for(int i=n;i>1;i--){
+if(i*i*i==n)
+{
+cout<< "Your hairline is a perfect cube"<<"\n";}
+}
 #endif
 #if 0
 int n,k;
@@ -123,11 +129,11 @@ cout<<sum<<"\n";}
 }
 #endif
 
-#if 0
+#if 1
 int n,i;
 int sum;
 cin>> n;
-for(i=1;i<=n;i++)
+for(i=1;i<=n;i+=2)
 	{
 	sum += i*i*i;
 	}
@@ -135,7 +141,7 @@ cout<<sum<<"\n";
 
 
 #endif
-#if 1
+#if 0
 
 	/* TODO: write code that gets an integer n from the user and prints out
 	 * the n-th term of the fibonacci sequence. */
@@ -173,26 +179,39 @@ return 0;
 	 * stdin and outputs the *second* smallest one.  NOTE: you don't need
 	 * to store many numbers (all at once, that is) to do this!  You'll
 	 * only need a few integer variables.  Think about invariants! */
-int min;
-int secmin;
-int n;
+int main(){
+int n,min,secmin,n1,n2;
+for(int i=0; i<100;i++){
+	while(cin>>n1 &&
+cin>>n2){
 
-cin>>n;
-min=n;
-cin>> secmin;
-while(cin>>n){
-if(n<min)
-n=min;
-else if(n<secmin && secmin> min)
-secmin=n;
+  if(n1<n2)
+  {min=n1;
+    secmin=n2;}
+else{ min=n2;
+  secmin=n1;}
+}
+ /* while(cin>>n)
+{if (n<secmin){
+  if(n<min)
+  {
+  secmin=min;
+  min=n;}
+else secmin=n;
+
+}
+}
+*/
+}
+cout<<secmin<<endl;
+
+
+
+
+
+return 0;
 }
 
-cout<<"The second smallest number is: "<<secmin<<"\n";
-
-	return 0;
 #endif
-
-	return 0;
-}
-
 // vim:foldlevel=1
+}

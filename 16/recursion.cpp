@@ -6,11 +6,12 @@ using std::endl;
 /* Let's revisit our example from last class: */
 void f(int n) {
 	if (n == 0) {
-		cout << 0 << " ";
+		cout << 0 << " "<<endl;
 		return;
 	}
-	cout << n << " ";
+cout << n << " "<<endl;
 	f(n-1);
+
 	/* TODO: make sure you can trace the sequence of recursive calls that
 	 * would result from calling say, f(3).  Flip the order of the cout
 	 * statement and the recursive call, and make sure you understand
@@ -27,10 +28,22 @@ void f(int n) {
 // Just let the recursive function calls do the work for you.
 void printVertically(unsigned long n)
 {
-	// your code goes here.
+	if(n<10){
+
+	return n;}
+		printVertically(n/10);
+		return n%10;
 }
 
+
+	// your code goes here.
+
+
 // TODO: write a recursive function to compute a^b (a to the b power)
+int power(int a,int b){
+	if(b == 0) return 1;
+	return a * power(a,b-1);
+}
 
 /* binary search. */
 
@@ -49,18 +62,23 @@ bool search(int* A, int size, int x)
 }
 
 int main()
-{
-	f(4);
+{ //int a,b;
+	//cin>> a;
+	//cin>> b;
+	//cout<<power(a,b)<<endl;
+
+	// f(4);
 	/* TODO: write test code for your functions. */
-	printVertically(3227);
+	printVertically(234);
 	/* binary search test: */
-	int A[100];
+	/* int A[100];
 	for (size_t i = 0; i < 100; i++) {
 		A[i] = i*i;
 	}
 	int x;
 	while (cin >> x)
 		cout << search(A,100,x) << endl;
+*/
 	return 0;
 }
 

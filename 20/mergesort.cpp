@@ -13,16 +13,21 @@ void merge(vector<int>& A, size_t low, size_t mid, size_t high)
 	 * are sorted, fill A[low..high] with their contents in
 	 * sorted order.  IDEA: keep in mind that thing with the
 	 * stacks of cards... */
-	vector<int> merged; /* store sorted / merged output to then
-						   copy back into A. */
+	vector<int> merged; /* store sorted / merged output to thencopy back into A. */
 	size_t l=low; /* left subarray candidate for smallest element */
 	size_t r=mid+1; /* right subarray candidate for smallest element */
+
 	while (l <= mid && r <= high) {
 		if (A[l] < A[r])
 			merged.push_back(A[l++]);
 		else
-			merged.push_back(A[r++]);
-	}
+			merged.push_back(A[r++]);}
+while(l<=mid) merged.push_back(A[l++]);
+
+while(r<=high) merged.push_back(A[r++]);
+
+for(size_t i=low; i<=high; i++)
+	A[i]=merged[i-low];
 	/* TODO: now handle case where one or the other has run out of elements: */
 	/* TODO: remember to copy back into the right locations in A! */
 }
@@ -31,7 +36,8 @@ void merge(vector<int>& A, size_t low, size_t mid, size_t high)
 void mergeSort(vector<int>& A, size_t low, size_t high)
 {
 	/* base case: subarray has less than 2 elements: */
-	if (low >= high) return;
+	if (low >= high)return;
+
 	/* else, divide array in two equal-ish pieces,
 	 * recursively sort each one, and then merge results. */
 	size_t mid = (low+high) / 2;
@@ -43,7 +49,9 @@ void mergeSort(vector<int>& A, size_t low, size_t high)
 	 * the subarrays we computed above will always be non-trivial.  That
 	 * is, neither subarray will be the entire array A[low..high].
 	 * (This is crucial to prevent infinite recursion!) */
+
 }
+
 
 int main(void)
 {

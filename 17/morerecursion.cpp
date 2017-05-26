@@ -16,8 +16,10 @@ using std::vector;
 /* TODO: write code to compute the greatest common divisor of two integers
  * Do this with recursion -- no loops!  */
 int gcd(int a, int b)
-{
-	return 1;
+{ if(b==0){
+	return a;}
+
+	return gcd(b,a%b);
 }
 
 /* TODO: write the *extended* GCD algorithm, which returns gcd(a,b), but
@@ -25,24 +27,34 @@ int gcd(int a, int b)
  * little bit of thinking (if you don't just look up the answer online).  Save
  * it for last. */
 int xgcd(int a, int b, int& u, int& v)
-{
-	return 0;
+{if(b==0){
+	u=1;
+	v=0;
+	return a;
+}
+int u1,v1;
+cout << u1 << v1 << "\n";
+xgcd(b,a%b,u1,v1);
+u=v1;
+v=u1-(a/b)*v1;
+	return xgcd(b,a%b,u1,v1);
 }
 
 void gcdTest()
 {
 	// TODO: modify this to test your *extended* gcd algorithm,
 	// once you've written it, that is.
-	int a,b,d;
+	int a,b,d,x,y;
 	cout << "Enter pairs of integers a,b for gcd test: ";
 	while(cin >> a >> b) {
-		d = gcd(a,b);
-		cout << "The gcd is: " << d << endl;
+		d = xgcd(a,b,x,y);
+		cout << "The gcd is: " << d<<" "<<x<< " "<<y << endl;
 	}
 }
 
 int main(int argc, char** argv)
 {
 	gcdTest();
+
 	return 0;
 }
