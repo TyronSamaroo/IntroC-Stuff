@@ -15,7 +15,7 @@ using std::cout;
 int main() {
 	/* we'll start with the classic first program in any
 	 * language: "hello world" */
-	cout << "hello class!\n";
+	cout << "hello class wodojadawd awd !\n";
 	/* NOTE: the "int" before main indicates that main
 	 * should ultimately return ("compute") an integer result.
 	 * We'll always give 0 as the result: */

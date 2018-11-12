@@ -12,7 +12,7 @@ cin >> c;
 	int average;
 average=(a+b+c)/3;
 
-cout<<average<<"\n";
+cout<<" The average is " <<average<<"\n";
 
 
 

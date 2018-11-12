@@ -86,7 +86,7 @@ int main()
 	return 0;
 	#endif
 
-#if 0
+#if 1
 	/* TODO: brute force test for perfect cubes.  Check if
 	 * n = k^3 for some integer k.  */
 
@@ -129,7 +129,7 @@ cout<<sum<<"\n";}
 }
 #endif
 
-#if 1
+#if 0
 int n,i;
 int sum;
 cin>> n;
